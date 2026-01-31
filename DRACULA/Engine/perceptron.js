@@ -59,6 +59,35 @@ export function perceptron(props)
     }
 }
 
+export function predict(props)
+{
+    const {X, model} = props
+    
+    let weight, bias
+    
+    // Load model from file if modelPath is provided
+    
+    weight = model.weight
+    bias = model.bias
+    
+    // Handle single sample (1D array) or multiple samples (2D array)
+    let isSingleSample = !Array.isArray(X[0])
+    let samples = isSingleSample ? [X] : X
+    
+    let predictions = []
+    
+    for(let i=0; i < samples.length; i++)
+    {
+        let x_i = samples[i]
+        let net_input = dot(x_i, weight) + bias
+        let y_pred = net_input >= 0 ? 1 : 0
+        predictions.push(y_pred)
+    }
+    
+    // Return single prediction for single sample, array for multiple samples
+    return isSingleSample ? predictions[0] : predictions
+}
+
 function dot(x, w)
 {
     let sum = 0
