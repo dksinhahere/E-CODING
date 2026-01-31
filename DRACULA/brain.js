@@ -1,0 +1,11 @@
+
+export {array_alloc} from "./Engine/array_alloc.js"
+export {alloc_which} from "./Engine/alloc_which.js"
+export {range_alloc} from "./Engine/range_alloc.js"
+export {hydrate} from "./Engine/hydrate.js"
+export {sanitize} from "./Engine/sanitize.js"
+export {minimum} from "./Engine/minimum.js"
+export {maximum} from "./Engine/maximum.js"
+export {normalize} from "./Engine/normalize.js"
+export {perceptron} from "./Engine/perceptron.js"
+export {load_perceptron} from "./Engine/load_perceptron.js"

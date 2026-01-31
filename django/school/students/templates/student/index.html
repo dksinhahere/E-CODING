@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <title>School Website</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+    </body>
+
+    <script type="text/babel" src="{% static 'students/javascript/components/Footer.jsx' %}"></script>
+    <script type="text/babel" src="{% static 'students/javascript/components/Header.jsx' %}"></script>
+    <script type="text/babel" src="{% static 'students/javascript/components/Apps.jsx' %}"></script>
+    <script type="text/babel" src="{% static 'students/javascript/index.jsx' %}"></script></script>
+
+</html>
