@@ -1,5 +1,4 @@
 
-import { features } from "node:process"
 import {array_alloc, alloc_which, range_alloc, hydrate, sanitize,
     minimum, maximum, normalize, perceptron, load_perceptron,
     mean, median, mode, cast_to_type, predict
