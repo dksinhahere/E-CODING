@@ -32,46 +32,77 @@ import {array_alloc, alloc_which, range_alloc, hydrate, sanitize,
 
 // console.log(arr2)
 
-let dataset = hydrate({
-    path: "./data/student_cgpa_iq_passfail_300.csv",
-    type: "csv" // csv or json
-})
+// let dataset = hydrate({
+//     path: "./data/student_cgpa_iq_passfail_300.csv",
+//     type: "csv" // csv or json
+// })
 
-let X = sanitize({
-    data:dataset,
-    features:["CGPA", "IQ"],
-    label:null
-})
+// let X = sanitize({
+//     data:dataset,
+//     features:["CGPA", "IQ"],
+//     label:null
+// })
 
-let label = sanitize({
-    data:dataset,
-    features:null,
-    label:["Result"]
-})
+// let label = sanitize({
+//     data:dataset,
+//     features:null,
+//     label:["Result"]
+// })
 
-// For column-wise min/max (min and max of each feature)
-let min = minimum({data: X})
-let max = maximum({data: X})
+// // For column-wise min/max (min and max of each feature)
+// let min = minimum({data: X, cluster:2})
+// let max = maximum({data: X, cluster:1})
 
 
-let features_normalized = normalize({
-    data: X, 
-    min: min, 
-    max: max
-})
+// let features_normalized = normalize({
+//     data: X, 
+//     min: min, 
+//     max: max
+// })
 
-perceptron({
-    X: features_normalized,
-    y: label,
-    lr: 0.1, 
-    epochs: 10000, 
-    save: true,
-    name:"perceptron",
-    type:"linear_classification"
-})
+// console.log(features_normalized)
 
-let model = load_perceptron({
-    path: "./perceptron.json"
-})
+// perceptron({
+//     X: features_normalized,
+//     y: label,
+//     lr: 0.1, 
+//     epochs: 10000, 
+//     save: true,
+//     name:"perceptron",
+//     type:"linear_classification"
+// })
 
-console.log("My Model ", model)
+// let model = load_perceptron({
+//     path: "./perceptron.json"
+// })
+
+// console.log("My Model ", model)
+
+
+
+
+
+
+// let X = [12, 11, 9, 1, 0, 9]
+// let min = minimum({data: X, cluster:1})
+// console.log(min)
+
+// X = [[12, 11], [9, 1], [0, 9], [5, 4, -1]]
+// min = minimum({data: X, cluster:2})
+// console.log(min)
+
+// X = [[[12, 11], [9, 1], [0, 9], [5, 4]]]
+// min = minimum({data: X, cluster:2})
+// console.log(min)
+
+// X = [12, 11, 9, 1, 0, 9]
+// let max = maximum({data: X})
+// console.log(max)  // Expected: 12
+
+// X = [[12, 11], [9, 1], [0, 9], [5, 4]]
+// max = maximum({data: X})
+// console.log(max)  // Expected: [12, 11]
+
+// X = [[[12, 11, 3], [9, 1, 2], [0, 9, 1], [5, 4, 0]]]
+// max = maximum({data: X})
+// console.log(max)  // Expected: [[12, 11]]
