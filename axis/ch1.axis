@@ -1,0 +1,13 @@
+
+import "io_util"
+
+class main {
+
+    impl main(self) {
+        io_util.log("Hello")
+    }
+
+}
+
+program = new main()
+program.main()
